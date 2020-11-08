@@ -15,9 +15,9 @@ class Command(BaseCommand):
 
         daily_list = []
         for value in daily_positive:
-            daily_list.append(int(value.string.replace('+', '')))
+            daily_list.append(int(value.string.replace(' ', '').replace(',', '')))
         for value in daily_patients:
-            daily_list.append(int(value.string.replace('+', '')))
+            daily_list.append(int(value.string.replace(' ', '').replace(',', '')))
         DailyCorona.objects.create(
             date=datetime.date.today(),
             positive=daily_list[0],

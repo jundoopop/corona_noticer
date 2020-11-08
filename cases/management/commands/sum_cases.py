@@ -15,7 +15,7 @@ class Command(BaseCommand):
 
         sum_list = []
         for value in sum_results:
-            sum_list.append(int(value.string.replace(',', '')))
+            sum_list.append(int(value.string.replace(' ', '').replace(',', '')))
 
         SumCorona.objects.create(
             date=datetime.date.today(),

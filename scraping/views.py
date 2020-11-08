@@ -7,7 +7,7 @@ from django.views import generic
 
 
 class HomePageView(generic.ListView):
-    template_name = 'home.html'
+    template_name = 'cases/daily.html'
     context_object_name = 'articles'
 
     # assign "News" object list to the object "articles"
