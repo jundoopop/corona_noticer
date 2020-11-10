@@ -7,6 +7,7 @@ from . import models
 class SumAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(models.DailyCorona)
 class DailyAdmin(admin.ModelAdmin):
     pass
