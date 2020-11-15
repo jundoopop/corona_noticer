@@ -1,1 +1,2 @@
-"web: gunicorn django_tasklist.wsgi --log-file -" 
+web: gunicorn corona_notice.wsgi
+release: python manage.py migrate
