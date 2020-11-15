@@ -1,2 +1,2 @@
 web: gunicorn corona_notice.wsgi
-release: python3 manage.py migrate
+release: python manage.py migrate
