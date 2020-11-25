@@ -8,6 +8,7 @@ from .models import SumCorona, DailyCorona
 
 class DailyPageView(generic.ListView):
     template_name = 'cases/daily.html'
+    ordering = 'date'
 
     def get_queryset(self):
         return DailyCorona.objects.all()
