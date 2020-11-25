@@ -2,7 +2,7 @@
 {% block content %}
     {% for sum_object in object_list %}
         <ul>{{ sum_object.date }} -> 확진 : {{ sum_object.positive }} = 사망 : {{ sum_object.death }} + 격리중
-            : {{ sum_object.quaratined }}
+            : {{ sum_object.quarantined }}
             완치 : {{ sum_object.cured }}</ul>
     {% endfor %}
 {% endblock content %}
