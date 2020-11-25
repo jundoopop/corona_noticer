@@ -1,8 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for sum_object in object_list %}
+        <ul>{{ sum_object.date }} -> 확진 : {{ sum_object.positive }} = 사망 : {{ sum_object.death }} + 격리중
+            : {{ sum_object.quaratined }}
+            완치 : {{ sum_object.cured }}</ul>
+    {% endfor %}
+{% endblock content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Daily Cases</title>
 </head>
 <body>
 
