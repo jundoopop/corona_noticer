@@ -8,7 +8,7 @@ from .models import SumCorona, DailyCorona
 
 class DailyPageView(generic.ListView):
     template_name = 'cases/daily.html'
-    ordering = '-date'
+    ordering = '-created_at'
     paginate_by = 10
 
     def get_queryset(self):
@@ -17,7 +17,7 @@ class DailyPageView(generic.ListView):
 
 class SumPageView(generic.ListView):
     template_name = 'cases/sum.html'
-    ordering = '-date'
+    ordering = '-created_at'
     paginate_by = 10
 
     def get_queryset(self):
