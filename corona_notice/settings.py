@@ -90,6 +90,7 @@ DATABASES = {
         'PASSWORD': 'admin',
         'HOST': '',
         'PORT': '5432',
+        'CONN_MAX_AGE': 500
     }
 }
 
@@ -128,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
