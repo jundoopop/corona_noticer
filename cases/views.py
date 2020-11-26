@@ -11,9 +11,8 @@ class DailyPageView(ListView):
     ordering = '-created_at'
     paginate_by = 10
 
-    def get_ordering(self):
-        ordering = self.request.GET.get('ordering', '-created_at')
-        return ordering
+    def get_queryset(self):
+        return SumCorona.objects.order_by('-created_at')
 
 
 class SumPageView(ListView):
@@ -21,6 +20,5 @@ class SumPageView(ListView):
     ordering = 'created_at'
     paginate_by = 10
 
-    def get_ordering(self):
-        ordering = self.request.GET.get('ordering', '-created_at')
-        return ordering
+    def get_queryset(self):
+        return SumCorona.objects.order_by('-created_at')
