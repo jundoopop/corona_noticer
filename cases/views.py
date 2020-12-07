@@ -1,6 +1,6 @@
 # from django.shortcuts import render
 # from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from .models import SumCorona, DailyCorona
 
 
@@ -12,11 +12,6 @@ class DailyPageView(ListView):
     ordering = '-date'
     paginate_by = 10
 
-    """
-    def get_queryset(self):
-        return SumCorona.objects.order_by(self, '-created_at')
-    """
-
 
 class SumPageView(ListView):
     model = SumCorona
@@ -24,7 +19,6 @@ class SumPageView(ListView):
     ordering = '-date'
     paginate_by = 10
 
-    """
-    def get_queryset(self):
-        return SumCorona.objects.order_by(self, '-created_at')
-    """
+
+class HomeView(TemplateView):
+    template_name = 'home.html'
