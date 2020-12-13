@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <p>This is Corona Noticer got data from K-CDC.</p>
+    <h6 class="card-title">data from K-CDC</h6>
     <div>
-        <button type="submit" formaction="{% url 'daily-view' %}">Daily Cases By Day</button>
+        <button type="submit" class="btn btn-outline-primary" formaction="{% url 'daily-view' %}">Daily Cases By Day
+        </button>
     </div>
     <div>
-        <button type="submit" formaction=="{% url 'sum-view' %}">Sum Cases By Day</button>
+        <button type="submit" class="btn btn-outline-success" formaction=="{% url 'sum-view' %}">Sum Cases By Day
+        </button>
     </div>
 {% endblock content %}
