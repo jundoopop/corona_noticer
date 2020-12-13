@@ -2,12 +2,14 @@
 
 {% block content %}
     <h6 class="card-title">data from K-CDC</h6>
-    <div>
-        <button type="submit" class="btn btn-outline-primary" formaction="{% url 'daily-view' %}">Daily Cases By Day
-        </button>
-    </div>
-    <div>
-        <button type="submit" class="btn btn-outline-success" formaction=="{% url 'sum-view' %}">Sum Cases By Day
-        </button>
+    <div class="gap-2">
+        <div>
+            <a class="btn btn-outline-primary w-50" href="{% url 'daily-view' %}">Daily Cases By Day
+            </a>
+        </div>
+        <div>
+            <a class="btn btn-outline-success w-50" href="{% url 'sum-view' %}">Sum Cases By Day
+            </a>
+        </div>
     </div>
 {% endblock content %}
