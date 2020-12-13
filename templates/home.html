@@ -2,6 +2,10 @@
 
 {% block content %}
     <p>This is Corona Noticer got data from K-CDC.</p>
-    <ul><a href="{% url 'daily-view' %}">Daily Cases By Day (Click)</a></ul>
-    <ul><a href="{% url 'sum-view' %}">Sum Cases By Day (Click)</a></ul>
+    <ul>Daily Cases By Day
+        <button><a href="{% url 'daily-view' %}">Click</a></button>
+    </ul>
+    <ul>Sum Cases By Day
+        <button><a href="{% url 'sum-view' %}">Click</a></button>
+    </ul>
 {% endblock content %}

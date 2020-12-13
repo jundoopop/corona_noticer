@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for daily_object in object_list %}
-        <ul>{{ daily_object.date }} -> 확진 : {{ daily_object.positive }} = 국내 {{ daily_object.domestic }} +
-            해외 {{ daily_object.oversea }}</ul>
-    {% endfor %}
+    <table>
+        <tr>
+            <th>날짜</th>
+            <th>추가 확진</th>
+            <th>국내 발생</th>
+            <th>해외 유입</th>
+        </tr>
+        {% for daily_object in object_list %}
+            <tr>
+                <td>{{ daily_object.date }}</td>
+                <td>{{ daily_object.positive }}</td>
+                <td>{{ daily_object.domestic }}</td>
+                <td>{{ daily_object.oversea }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
     {% if page_obj.has_previous %}
         <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
     {% endif %}
