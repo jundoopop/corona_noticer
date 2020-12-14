@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-    <h5 class="card-title">날짜별 일일 현황</h5>
-    <table class="table table-hover fs-8">
+    <h5 class="fs-5">날짜별 일일 현황</h5>
+    <table class="table table-hover">
         <tr>
             <th>날짜</th>
             <th>추가 확진</th>
@@ -17,7 +17,6 @@
             </tr>
         {% endfor %}
     </table>
-    </h5>
 
     {% if page_obj.has_previous %}
         <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
