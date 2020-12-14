@@ -6,6 +6,7 @@ from .models import SumCorona, DailyCorona
 
 # Create your views here.
 
+# ListView that shows daily cases by DailyCorona model
 class DailyPageView(ListView):
     model = DailyCorona
     template_name = 'cases/daily.html'
@@ -13,6 +14,7 @@ class DailyPageView(ListView):
     paginate_by = 10
 
 
+# ListView that shows accumulated cases by SumCorona model
 class SumPageView(ListView):
     model = SumCorona
     template_name = 'cases/sum.html'
@@ -20,5 +22,6 @@ class SumPageView(ListView):
     paginate_by = 10
 
 
+# TemplateView that shows choices page which connects to daily or sum cases
 class HomeView(TemplateView):
     template_name = 'home.html'

@@ -3,6 +3,8 @@ from django.db import models
 
 # Create your models here.
 
+
+# table which contains daily cases
 class DailyCorona(models.Model):
     date = models.DateField(primary_key=True)
     positive = models.IntegerField(default=0)
@@ -11,14 +13,12 @@ class DailyCorona(models.Model):
     cured = models.IntegerField(default=0)
     quarantined = models.IntegerField(default=0)
     death = models.IntegerField(default=0)
-    # tests = models.IntegerField(default=0)
 
 
+# table which contains accumulated cases
 class SumCorona(models.Model):
     date = models.DateField(primary_key=True)
     positive = models.IntegerField(default=0)
-    # domestic = models.IntegerField(default=0)
-    # oversea = models.IntegerField(default=0)
     death = models.IntegerField(default=0)
     cured = models.IntegerField(default=0)
     negative = models.IntegerField(default=0)
