@@ -1,11 +1,8 @@
 
 
-
-source : 
-
-used beautifulSoup4(crawling), django(backend), bootstrap(site interface)
-
-
+> #### ❗ the last data update date is Oct 31, 2021. 
+> #### ❗ HTML Tags to crawl data may wrong because of K-CDC websites' modification. 
+> #### ❗ It would be fixed soon.
 
 # 👋 Getting Started! Welcome 😊
 - This is the first Django mini project.

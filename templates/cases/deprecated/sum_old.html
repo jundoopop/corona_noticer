@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <h5 class="fs-5">날짜별 누적 현황</h5>
+    <table class="table table-hover">
+        <tr>
+            <th>날짜</th>
+            <th>누적 확진</th>
+            <th>총 사망</th>
+            <th>현재 격리중</th>
+            <th>총 완치</th>
+        </tr>
+        {% for sum_object in object_list %}
+            <tr>
+                <td>{{ sum_object.date }}</td>
+                <td>{{ sum_object.positive }}</td>
+                <td>{{ sum_object.death }}</td>
+                <td>{{ sum_object.quarantined }}</td>
+                <td>{{ sum_object.cured }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+    {% endif %}
+    Current Page : {{ page_obj.number }}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+
+{% endblock content %}

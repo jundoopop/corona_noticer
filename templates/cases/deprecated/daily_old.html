@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <h5 class="fs-5">날짜별 일일 현황</h5>
+    <table class="table table-hover">
+        <tr>
+            <th>날짜</th>
+            <th>추가 확진</th>
+            <th>국내 발생</th>
+            <th>해외 유입</th>
+        </tr>
+        {% for daily_object in object_list %}
+            <tr>
+                <td>{{ daily_object.date }}</td>
+                <td>{{ daily_object.positive }}</td>
+                <td>{{ daily_object.domestic }}</td>
+                <td>{{ daily_object.oversea }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+    {% endif %}
+    Current Page : {{ page_obj.number }}
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+{% endblock content %}

@@ -19,7 +19,7 @@ from cases.views import DailyPageView, SumPageView, HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('daily/', DailyPageView.as_view(), name='daily-view'),
-    path('sum/', SumPageView.as_view(), name='sum-view'),
+    path('daily_old/', DailyPageView.as_view(), name='daily-view-deprecated'),
+    path('sum_old/', SumPageView.as_view(), name='sum-view-deprecated'),
     path('', HomeView.as_view(), name='home-view'),
 ]

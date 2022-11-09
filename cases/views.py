@@ -9,7 +9,7 @@ from .models import SumCorona, DailyCorona
 # ListView that shows daily cases by DailyCorona model
 class DailyPageView(ListView):
     model = DailyCorona
-    template_name = 'cases/daily.html'
+    template_name = 'cases/daily_old.html'
     ordering = '-date'
     paginate_by = 10
 
@@ -17,7 +17,7 @@ class DailyPageView(ListView):
 # ListView that shows accumulated cases by SumCorona model
 class SumPageView(ListView):
     model = SumCorona
-    template_name = 'cases/sum.html'
+    template_name = 'cases/sum_old.html'
     ordering = '-date'
     paginate_by = 10
 

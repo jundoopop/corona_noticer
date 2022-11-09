@@ -2,16 +2,21 @@
 
 {% block content %}
     <h6 class="card-title">data from K-CDC</h6>
+    <h5>COVID data table adapted to endemic in Korea is TBA. Thank you!</h5>
     <div>
         <ul>출처 : <a
                 href="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=11&ncvContSeq=&contSeq=&board_id=&gubun=">대한민국
             질병 관리 본부</a></ul>
     </div>
     <div class="d-grid mx-auto gap-2">
+        <h6>Cases ~ 2021.10</h6>
+        <p style="color:red"> COVID quarantine policy in South Korea changed. Patients who are positive stay in-house
+            themselves if not severe, and there's no data on currently quarantined
+        </p>
         <div class="container mx-auto">
-            <a class="btn btn-outline-primary" href="{% url 'daily-view' %}">Daily
+            <a class="btn btn-outline-primary" href="{% url 'daily-view-deprecated' %}">Daily
             </a>
-            <a class="btn btn-outline-success" href="{% url 'sum-view' %}">Sum
+            <a class="btn btn-outline-success" href="{% url 'sum-view-deprecated' %}">Sum
             </a>
         </div>
     </div>
