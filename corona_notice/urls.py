@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('daily_old/', DailyPageView.as_view(), name='daily-view-deprecated'),
     path('sum_old/', SumPageView.as_view(), name='sum-view-deprecated'),
+    path('daily/', SumPageView.as_view(), name='daily-view-2022'),
     path('', HomeView.as_view(), name='home-view'),
 ]

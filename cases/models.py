@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 
 
+# deprecated!
 # table which contains daily cases
 class DailyCorona(models.Model):
     date = models.DateField(primary_key=True)
@@ -26,3 +27,13 @@ class SumCorona(models.Model):
     in_test = models.IntegerField(default=0)
     quarantined = models.IntegerField(default=0)
     pos_neg = models.IntegerField(default=0)
+
+
+# currently used model
+class DailyCasesNew(models.Model):
+    date = models.DateField(primary_key=True)
+    positive = models.IntegerField(default=0)
+    domestic = models.IntegerField(default=0)
+    oversea = models.IntegerField(default=0)
+    quarantined = models.IntegerField(default=0)
+    death = models.IntegerField(default=0)

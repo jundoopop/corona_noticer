@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from bs4 import BeautifulSoup
-from cases.models import DailyCorona
+from cases.models import DailyCasesNew
 import requests
 import datetime
 
@@ -13,21 +13,20 @@ class Command(BaseCommand):
 
         # find values by html class
         daily_cases = ncov.find_all(class_='ca_value')
-        oversea_daily = ncov.find(class_='sumline')
+        daily_positives = int(daily_cases[6].string.replace(',', ''))
+        oversea_daily = int(ncov.find(class_='sumline').td.text)
 
-        DailyCorona.objects.create(
+        DailyCasesNew.objects.create(
             date=datetime.date.today(),
-            positive=int(daily_cases[6].string.replace(',', '')),
-
+            positive=daily_positives,
             # subtract the oversea cases from daily cases in ca_value
-            domestic=daily_list[1],
-            oversea=daily_list[2],
+            domestic=daily_positives - oversea_daily,
+            oversea=oversea_daily,
 
-            #
-            cured=daily_list[3],
-            quarantined=daily_list[4],
+            # no cured data since 2021, because of covid policy has changed
+            quarantined=int(daily_cases[2].text),
 
-            death=daily_list[5],
+            death=int(daily_cases[0].text),
 
         )
         self.stdout.write('complete')
